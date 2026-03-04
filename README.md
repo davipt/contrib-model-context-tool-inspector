@@ -1,4 +1,4 @@
-# Model Context Tool Inspector
+# WebMCP - Model Context Tool Inspector
 
 A Chrome Extension that allows developers to inspect, monitor, and execute tools exposed via the experimental `navigator.modelContextTesting` Web API.
 
