@@ -153,6 +153,7 @@ async function initGenAI() {
   genAI = localStorage.apiKey ? new GoogleGenAI({ apiKey: localStorage.apiKey }) : undefined;
   promptBtn.disabled = !localStorage.apiKey;
   resetBtn.disabled = !localStorage.apiKey;
+  apiKeyBtn.textContent = localStorage.apiKey ? 'Update Gemini API key' : 'Set Gemini API key';
 }
 await initGenAI();
 
@@ -278,7 +279,7 @@ resetBtn.onclick = () => {
 };
 
 apiKeyBtn.onclick = async () => {
-  const apiKey = prompt('Enter Gemini API key');
+  const apiKey = prompt('Enter Gemini API key', localStorage.apiKey);
   if (apiKey == null) return;
   localStorage.apiKey = apiKey;
   await initGenAI();
